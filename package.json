@@ -1,6 +1,7 @@
 {
 	"name": "autocount-price-checker",
 	"version": "0.0.0",
+	"proxy": "http://localhost:5000/",
 	"scripts": {
 		"tauri": "tauri",
 		"dev": "vite",
@@ -12,8 +13,8 @@
 		"@chakra-ui/react": "^1.8.1",
 		"@emotion/react": "^11.7.1",
 		"@emotion/styled": "^11.6.0",
+		"axios": "^0.25.0",
 		"framer-motion": "^5.6.0",
-		"mssql": "^7.3.0",
 		"react": "^17.0.2",
 		"react-dom": "^17.0.2",
 		"react-hook-form": "^7.25.3"
