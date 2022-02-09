@@ -1,7 +1,7 @@
 import { Heading, Box, VStack } from '@chakra-ui/react';
 
-export default function Details() {
-	return (
+export default function Details({ description, price }) {
+	return description && price ? (
 		<Box p="2rem" mt="2rem" minH="lg" display="flex" alignItems="center">
 			<VStack spacing={10}>
 				<Heading
@@ -10,12 +10,18 @@ export default function Details() {
 					textAlign="center"
 					lineHeight={1.2}
 				>
-					In esse ea cupidatat proident ipsum veniam proident ut ipsum.
-					Voluptate laboris occaecat commodo irure reprehenderit Lorem non
-					occaecat magna pariatur. Culpa aliqua do ad irure.
+					{description}
 				</Heading>
 				<Heading size="2xl" color="white">
-					RM Price
+					RM {Number(price).toFixed(2)}
+				</Heading>
+			</VStack>
+		</Box>
+	) : (
+		<Box p="2rem" mt="2rem" minH="lg" display="flex" alignItems="center">
+			<VStack spacing={10}>
+				<Heading size="2xl" color="white">
+					Not Found
 				</Heading>
 			</VStack>
 		</Box>

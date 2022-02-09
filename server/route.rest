@@ -1,0 +1,6 @@
+POST http://localhost:5000/api/checker
+Content-Type: application/json
+
+{
+   "barcode": "9556057444010"
+}

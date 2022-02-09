@@ -1,16 +1,20 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Input, InputGroup, IconButton, HStack } from '@chakra-ui/react';
 import { SearchIcon } from '@chakra-ui/icons';
 import { useForm } from 'react-hook-form';
 import { checkBarcode } from '../api/Checker';
 
-export default function Form() {
+export default function Form({ setItemData }) {
 	const { handleSubmit } = useForm();
+	const barcodeInput = useRef();
 
 	const onSubmit = async () => {
-		const { description } = await checkBarcode();
+		const barcode = barcodeInput.current.value;
+		const { Description, Price } = await checkBarcode(barcode);
 
-		console.log(description);
+		setItemData({ Description, Price });
+
+		barcodeInput.current.value = '';
 	};
 
 	return (
@@ -22,6 +26,7 @@ export default function Form() {
 						w="80vw"
 						mr="1rem"
 						bgColor="white"
+						ref={barcodeInput}
 					/>
 					<IconButton
 						icon={<SearchIcon />}
