@@ -2,7 +2,7 @@ import { Heading, Box, VStack } from '@chakra-ui/react';
 
 export default function Details({ description, price }) {
 	return description && price ? (
-		<Box p="2rem" mt="2rem" minH="lg" display="flex" alignItems="center">
+		<Box px="1rem" mt="2rem" minH="xs" display="flex" alignItems="center">
 			<VStack spacing={10}>
 				<Heading
 					size="2xl"
@@ -18,12 +18,10 @@ export default function Details({ description, price }) {
 			</VStack>
 		</Box>
 	) : (
-		<Box p="2rem" mt="2rem" minH="lg" display="flex" alignItems="center">
-			<VStack spacing={10}>
-				<Heading size="2xl" color="white">
-					Not Found
-				</Heading>
-			</VStack>
+		<Box px="1rem" mt="2rem" minH="xs" display="flex" alignItems="center">
+			<Heading size="2xl" color="white">
+				Not Found
+			</Heading>
 		</Box>
 	);
 }

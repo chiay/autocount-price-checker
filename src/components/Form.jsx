@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Input, InputGroup, IconButton, HStack } from '@chakra-ui/react';
 import { SearchIcon } from '@chakra-ui/icons';
 import { useForm } from 'react-hook-form';
@@ -27,6 +27,7 @@ export default function Form({ setItemData }) {
 						mr="1rem"
 						bgColor="white"
 						ref={barcodeInput}
+						autoFocus
 					/>
 					<IconButton
 						icon={<SearchIcon />}
